@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RAAK | Wsparcie dla producentów stolarki aluminiowej</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 * {
@@ -16,7 +16,7 @@ body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: #0f172a;
-    background-image: 
+    background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -26,42 +26,54 @@ body {
 .container {
     max-width: 1100px;
     margin: auto;
-    padding: 80px 20px;
+    padding: 60px 20px; /* zmniejszony odstęp */
 }
 
 .hero {
     text-align: center;
-    padding: 100px 20px 80px 20px;
+    padding: 80px 20px 40px 20px; /* zmniejszony odstęp w pionie */
 }
+
+/* ===== LOGO ===== */
 
 .logo {
     font-size: 64px;
-    font-weight: 700;
-    letter-spacing: 10px;
+    font-weight: 800;
+    letter-spacing: 8px;
+    display: inline-block;
+    position: relative;
 }
 
-.logo-line {
-    width: 120px;
+.logo span {
+    color: #38bdf8;
+}
+
+.logo::after {
+    content: "";
+    display: block;
+    width: 140px;
     height: 3px;
     background: #38bdf8;
-    margin: 20px auto 40px auto;
+    margin: 18px auto 0 auto;
 }
+
+/* ================= */
 
 .subtitle {
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
     max-width: 800px;
-    margin: auto;
+    margin: 30px auto 0 auto; /* mniejszy odstęp */
     color: #cbd5e1;
 }
 
 .section {
-    margin-top: 100px;
+    margin-top: 70px; /* było 100px – zmniejszone */
 }
 
 .section h2 {
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    margin-bottom: 25px;
     border-left: 4px solid #38bdf8;
     padding-left: 15px;
 }
@@ -76,7 +88,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    margin-top: 40px;
+    margin-top: 30px;
 }
 
 .service-box {
@@ -97,7 +109,7 @@ body {
 }
 
 .contact {
-    margin-top: 40px;
+    margin-top: 30px;
     font-size: 18px;
 }
 
@@ -112,16 +124,17 @@ a:hover {
 
 footer {
     text-align: center;
-    margin-top: 120px;
+    margin-top: 100px;
     font-size: 14px;
     color: #64748b;
 }
 
 /* Responsywność */
+
 @media (max-width: 768px) {
     .logo {
         font-size: 40px;
-        letter-spacing: 6px;
+        letter-spacing: 4px;
     }
     .subtitle {
         font-size: 18px;
@@ -133,8 +146,7 @@ footer {
 <body>
 
 <div class="hero">
-    <div class="logo">RAAK</div>
-    <div class="logo-line"></div>
+    <div class="logo">RA<span>A</span>K</div>
     <div class="subtitle">
         Nowoczesne rozwiązania i profesjonalne wsparcie dla producentów stolarki aluminiowej
     </div>
@@ -150,8 +162,9 @@ footer {
         </p>
         <p>
             Rozumiemy specyfikę branży – od projektowania systemów aluminiowych,
-            przez produkcję, aż po realizację inwestycji. Naszym celem jest zwiększenie
-            efektywności operacyjnej, jakości oraz konkurencyjności przedsiębiorstw.
+            przez produkcję, aż po realizację inwestycji.
+            Naszym celem jest zwiększenie efektywności operacyjnej,
+            jakości oraz konkurencyjności przedsiębiorstw.
         </p>
         <p>
             Działamy partnersko, koncentrując się na realnych wynikach
