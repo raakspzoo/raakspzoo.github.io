@@ -3,141 +3,500 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAAK | Wsparcie dla producentów stolarki aluminiowej</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<title>RAAK | Wsparcie techniczne dla producentów stolarki aluminiowej</title>
+<meta name="description" content="RAAK – specjalistyczne wsparcie techniczne dla producentów stolarki aluminiowej. Technologia, konstrukcje, reklamacje, wdrożenia i R&D.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --navy: #07121d;
+    --navy2: #0b1824;
+    --panel: #0d1c29;
+    --gold: #cda267;
+    --gold-light: #e1c08c;
+    --text: #f3f1ec;
+    --muted: #aeb7bf;
+    --line: rgba(205,162,103,.28);
+}
+
 * {
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     margin: 0;
     font-family: 'Montserrat', sans-serif;
-    background-color: #0f172a;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 40px 40px;
-    color: #f1f5f9;
-}
-
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px; /* zmniejszony odstęp */
-}
-
-.hero {
-    text-align: center;
-    padding: 80px 20px 40px 20px; /* zmniejszony odstęp w pionie */
-}
-
-/* ===== LOGO ===== */
-
-.logo {
-    font-size: 64px;
-    font-weight: 800;
-    letter-spacing: 8px;
-    display: inline-block;
-    position: relative;
-}
-
-.logo span {
-    color: #38bdf8;
-}
-
-.logo::after {
-    content: "";
-    display: block;
-    width: 140px;
-    height: 3px;
-    background: #38bdf8;
-    margin: 18px auto 0 auto;
-}
-
-/* ================= */
-
-.subtitle {
-    font-size: 22px;
-    font-weight: 400;
-    max-width: 800px;
-    margin: 30px auto 0 auto; /* mniejszy odstęp */
-    color: #cbd5e1;
-}
-
-.section {
-    margin-top: 70px; /* było 100px – zmniejszone */
-}
-
-.section h2 {
-    font-size: 26px;
-    margin-bottom: 25px;
-    border-left: 4px solid #38bdf8;
-    padding-left: 15px;
-}
-
-.section p {
-    font-size: 18px;
-    color: #cbd5e1;
-    line-height: 1.7;
-}
-
-.services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.service-box {
-    background: rgba(255,255,255,0.03);
-    padding: 30px;
-    border: 1px solid rgba(255,255,255,0.05);
-    transition: 0.3s;
-}
-
-.service-box:hover {
-    border-color: #38bdf8;
-    transform: translateY(-5px);
-}
-
-.service-box h3 {
-    margin-top: 0;
-    color: #38bdf8;
-}
-
-.contact {
-    margin-top: 30px;
-    font-size: 18px;
+    background: var(--navy);
+    color: var(--text);
+    line-height: 1.6;
 }
 
 a {
-    color: #38bdf8;
+    color: inherit;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+.wrap {
+    width: min(1400px, calc(100% - 80px));
+    margin: auto;
 }
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(5,15,24,.94);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.nav {
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: 500;
+    letter-spacing: 7px;
+    color: var(--gold-light);
+}
+
+.brand-line {
+    width: 75px;
+    height: 1px;
+    background: var(--gold);
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+nav a {
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--gold);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 620px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 80% 30%, rgba(205,162,103,.11), transparent 28%),
+        linear-gradient(120deg, #07121d 20%, #0a1926 65%, #101b24);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: .16;
+    background-image:
+        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+    background-size: 55px 55px;
+    mask-image: linear-gradient(to right, black, transparent 80%);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 930px;
+    padding: 95px 0;
+}
+
+.hero-logo {
+    font-size: clamp(72px, 10vw, 145px);
+    line-height: .9;
+    font-weight: 500;
+    letter-spacing: 12px;
+    color: var(--gold-light);
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+
+h1 {
+    font-size: clamp(29px, 4vw, 52px);
+    line-height: 1.16;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 900px;
+}
+
+.hero p {
+    max-width: 760px;
+    color: var(--muted);
+    font-size: 17px;
+    margin: 28px 0 0;
+}
+
+.specialties {
+    margin-top: 38px;
+    color: var(--gold-light);
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* EXPERIENCE */
+
+.experience {
+    background: linear-gradient(90deg, #0b1824, #101f2d);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+
+.experience-inner {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    align-items: center;
+    gap: 65px;
+    padding: 55px 0;
+}
+
+.number {
+    font-size: 108px;
+    font-weight: 300;
+    line-height: .85;
+    color: var(--gold-light);
+}
+
+.years {
+    color: var(--gold);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+.experience-text h2 {
+    font-size: 29px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 0 0 15px;
+    text-transform: uppercase;
+}
+
+.experience-text p {
+    max-width: 850px;
+    margin: 0;
+    color: var(--muted);
+}
+
+/* SECTIONS */
+
+section {
+    padding: 95px 0;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title span {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin: 8px 0 0;
+}
+
+/* SERVICES */
+
+.services {
+    background: #081521;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+}
+
+.card {
+    min-height: 245px;
+    padding: 35px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    transition: .3s;
+}
+
+.card:hover {
+    background: rgba(205,162,103,.055);
+}
+
+.card-number {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+.card h3 {
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 30px 0 15px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+/* REALIZATIONS */
+
+.realizations {
+    background: #0a1723;
+}
+
+.realization-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.realization {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.08);
+    background:
+        linear-gradient(145deg, rgba(205,162,103,.08), transparent),
+        #101f2c;
+}
+
+.realization::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(135deg, transparent 48%, rgba(205,162,103,.18) 49%, rgba(205,162,103,.18) 50%, transparent 51%);
+    background-size: 70px 70px;
+}
+
+.realization-title {
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    border-top: 1px solid var(--gold);
+    padding-top: 15px;
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+/* ABOUT */
+
+.about {
+    background: #07121d;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+}
+
+.about p {
+    color: var(--muted);
+    font-size: 16px;
+}
+
+.quote {
+    border-left: 1px solid var(--gold);
+    padding-left: 35px;
+    font-size: 25px;
+    line-height: 1.5;
+    font-weight: 300;
+}
+
+/* CONTACT */
+
+.contact-section {
+    background:
+        linear-gradient(120deg, rgba(205,162,103,.08), transparent 45%),
+        #0c1925;
+    border-top: 1px solid var(--line);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 80px;
+}
+
+.contact-title {
+    font-size: 39px;
+    font-weight: 300;
+    margin: 0 0 20px;
+}
+
+.contact-copy {
+    color: var(--muted);
+    max-width: 620px;
+}
+
+.contact-details {
+    border-left: 1px solid var(--gold);
+    padding-left: 40px;
+}
+
+.contact-details div {
+    margin-bottom: 22px;
+}
+
+.contact-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.contact-value {
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.contact-value a:hover {
+    color: var(--gold-light);
+}
+
+/* FOOTER */
 
 footer {
-    text-align: center;
-    margin-top: 100px;
-    font-size: 14px;
-    color: #64748b;
+    border-top: 1px solid rgba(255,255,255,.07);
+    padding: 30px 0;
+    color: #77838d;
+    font-size: 12px;
 }
 
-/* Responsywność */
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+}
 
-@media (max-width: 768px) {
-    .logo {
-        font-size: 40px;
-        letter-spacing: 4px;
+/* MOBILE */
+
+@media (max-width: 1000px) {
+    nav {
+        display: none;
     }
-    .subtitle {
-        font-size: 18px;
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .realization-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .wrap {
+        width: min(100% - 36px, 1400px);
+    }
+
+    .nav {
+        min-height: 70px;
+    }
+
+    .brand-line {
+        display: none;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding: 75px 0;
+    }
+
+    .hero-logo {
+        font-size: 65px;
+        letter-spacing: 7px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    .experience-inner,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .grid,
+    .realization-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .number {
+        font-size: 80px;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .contact-details {
+        padding-left: 25px;
     }
 }
 </style>
@@ -145,64 +504,266 @@ footer {
 
 <body>
 
-<div class="hero">
-    <div class="logo">RA<span>A</span>K</div>
-    <div class="subtitle">
-        Nowoczesne rozwiązania i profesjonalne wsparcie dla producentów stolarki aluminiowej
+<header>
+    <div class="wrap nav">
+        <div class="brand">
+            <a class="logo" href="#">RAAK</a>
+            <div class="brand-line"></div>
+        </div>
+
+        <nav>
+            <a href="#">Strona główna</a>
+            <a href="#wsparcie">Zakres wsparcia</a>
+            <a href="#doswiadczenie">Doświadczenie</a>
+            <a href="#realizacje">Realizacje</a>
+            <a href="#o-raak">O RAAK</a>
+            <a href="#kontakt">Kontakt</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+<section class="hero">
+    <div class="wrap hero-content">
+
+        <div class="hero-logo">RAAK</div>
+
+        <div class="eyebrow">Wsparcie techniczne</div>
+
+        <h1>
+            Dla producentów<br>
+            stolarki aluminiowej
+        </h1>
+
+        <p>
+            Praktyczne rozwiązania techniczne oparte na doświadczeniu,
+            wiedzy inżynierskiej i znajomości rzeczywistych problemów
+            produkcyjnych oraz wykonawczych.
+        </p>
+
+        <div class="specialties">
+            Konstrukcje &nbsp; | &nbsp;
+            Technologia &nbsp; | &nbsp;
+            Reklamacje &nbsp; | &nbsp;
+            R&amp;D &nbsp; | &nbsp;
+            Wdrożenia
+        </div>
+
+    </div>
+</section>
+
+
+<div class="experience" id="doswiadczenie">
+    <div class="wrap experience-inner">
+
+        <div>
+            <div class="number">35</div>
+            <div class="years">lat doświadczenia w branży</div>
+        </div>
+
+        <div class="experience-text">
+            <h2>Wiedza. Praktyka. Rozwiązania.</h2>
+            <p>
+                Wieloletnie doświadczenie w branży stolarki aluminiowej
+                pozwala łączyć wiedzę techniczną z praktyką produkcyjną,
+                wykonawczą i reklamacyjną.
+            </p>
+        </div>
+
     </div>
 </div>
 
-<div class="container">
 
-    <div class="section">
-        <h2>O firmie</h2>
-        <p>
-            RAAK specjalizuje się w dostarczaniu nowoczesnych rozwiązań dla producentów stolarki aluminiowej.
-            Wspieramy firmy w optymalizacji procesów, wdrażaniu technologii oraz budowaniu silnej pozycji rynkowej.
-        </p>
-        <p>
-            Rozumiemy specyfikę branży – od projektowania systemów aluminiowych,
-            przez produkcję, aż po realizację inwestycji.
-            Naszym celem jest zwiększenie efektywności operacyjnej,
-            jakości oraz konkurencyjności przedsiębiorstw.
-        </p>
-        <p>
-            Działamy partnersko, koncentrując się na realnych wynikach
-            i długoterminowym rozwoju naszych klientów.
-        </p>
-    </div>
+<section class="services" id="wsparcie">
+    <div class="wrap">
 
-    <div class="section">
-        <h2>Zakres wsparcia</h2>
-        <div class="services">
-            <div class="service-box">
-                <h3>Optymalizacja procesów</h3>
-                <p>Usprawnianie produkcji i organizacji pracy w firmach zajmujących się stolarką aluminiową.</p>
+        <div class="section-title">
+            <span>Zakres kompetencji</span>
+            <h2>Wsparcie techniczne</h2>
+        </div>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="card-number">01</div>
+                <h3>Wsparcie techniczne</h3>
+                <p>
+                    Dobór rozwiązań, rozwiązywanie problemów technicznych
+                    oraz wsparcie producentów na etapie realizacji.
+                </p>
             </div>
-            <div class="service-box">
-                <h3>Wdrożenia technologiczne</h3>
-                <p>Implementacja nowoczesnych narzędzi wspierających zarządzanie, planowanie i kontrolę jakości.</p>
+
+            <div class="card">
+                <div class="card-number">02</div>
+                <h3>Analiza problemów i reklamacji</h3>
+                <p>
+                    Diagnostyka przyczyn, analiza techniczna,
+                    dokumentacja oraz rekomendacje działań naprawczych.
+                </p>
             </div>
-            <div class="service-box">
-                <h3>Rozwój biznesu</h3>
-                <p>Wsparcie strategiczne w budowaniu konkurencyjności i skalowaniu działalności.</p>
+
+            <div class="card">
+                <div class="card-number">03</div>
+                <h3>Technologia produkcji</h3>
+                <p>
+                    Optymalizacja procesów produkcyjnych,
+                    dobór technologii i wsparcie przy wdrażaniu rozwiązań.
+                </p>
             </div>
+
+            <div class="card">
+                <div class="card-number">04</div>
+                <h3>Doradztwo konstrukcyjne</h3>
+                <p>
+                    Analiza rozwiązań konstrukcyjnych,
+                    dobór systemów i konsultacje techniczne.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">05</div>
+                <h3>Analizy i dokumentacja</h3>
+                <p>
+                    Opracowania techniczne, procedury,
+                    instrukcje oraz dokumentacja wspierająca procesy.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-number">06</div>
+                <h3>Rozwój i innowacje</h3>
+                <p>
+                    Wsparcie R&amp;D, rozwój nowych rozwiązań
+                    oraz usprawnianie istniejących technologii.
+                </p>
+            </div>
+
         </div>
     </div>
+</section>
 
-    <div class="section">
-        <h2>Kontakt</h2>
-        <div class="contact">
-            Email: <a href="mailto:raakspzoo@gmail.com">raakspzoo@gmail.com</a><br><br>
-            Tel: <a href="tel:+48884054808">+48 884 054 808</a>
+
+<section class="realizations" id="realizacje">
+    <div class="wrap">
+
+        <div class="section-title">
+            <span>Doświadczenie w praktyce</span>
+            <h2>Realizacje / obszary wsparcia</h2>
         </div>
+
+        <div class="realization-grid">
+
+            <div class="realization">
+                <div class="realization-title">
+                    Fasady aluminiowo-szklane
+                </div>
+            </div>
+
+            <div class="realization">
+                <div class="realization-title">
+                    Świetliki i dachy szklane
+                </div>
+            </div>
+
+            <div class="realization">
+                <div class="realization-title">
+                    Systemy przesuwne HS
+                </div>
+            </div>
+
+            <div class="realization">
+                <div class="realization-title">
+                    Systemy okienne i drzwiowe
+                </div>
+            </div>
+
+        </div>
+
     </div>
+</section>
 
-    <footer>
-        © 2025 RAAK. Wszelkie prawa zastrzeżone.
-    </footer>
 
-</div>
+<section class="about" id="o-raak">
+    <div class="wrap about-grid">
+
+        <div>
+            <div class="section-title">
+                <span>O firmie</span>
+                <h2>RAAK</h2>
+            </div>
+
+            <p>
+                RAAK zapewnia niezależne wsparcie techniczne
+                dla producentów stolarki aluminiowej.
+            </p>
+
+            <p>
+                Łączymy doświadczenie praktyczne z wiedzą inżynierską,
+                wspierając producentów w obszarze konstrukcji,
+                technologii produkcji, reklamacji, wdrożeń oraz R&amp;D.
+            </p>
+        </div>
+
+        <div class="quote">
+            Od problemu technicznego<br>
+            do skutecznego rozwiązania.
+        </div>
+
+    </div>
+</section>
+
+
+<section class="contact-section" id="kontakt">
+    <div class="wrap contact-grid">
+
+        <div>
+            <div class="eyebrow">Kontakt</div>
+
+            <h2 class="contact-title">
+                Porozmawiajmy o Twoim projekcie
+                lub problemie technicznym.
+            </h2>
+
+            <div class="contact-copy">
+                Zapraszamy do kontaktu w sprawach dotyczących
+                wsparcia technicznego, technologii produkcji,
+                konstrukcji oraz analiz reklamacyjnych.
+            </div>
+        </div>
+
+        <div class="contact-details">
+
+            <div>
+                <div class="contact-label">Telefon</div>
+                <div class="contact-value">
+                    <a href="tel:+48884054808">+48 884 054 808</a>
+                </div>
+            </div>
+
+            <div>
+                <div class="contact-label">E-mail</div>
+                <div class="contact-value">
+                    <a href="mailto:raakspzoo@gmail.com">
+                        raakspzoo@gmail.com
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+
+<footer>
+    <div class="wrap footer-inner">
+        <div>© 2026 RAAK</div>
+        <div>Wsparcie techniczne dla producentów stolarki aluminiowej</div>
+    </div>
+</footer>
 
 </body>
 </html>
