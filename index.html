@@ -90,6 +90,26 @@
       .hero-content{padding-left:25px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+    /* Brand clarity: more physical pixels for the drafting guides around each letter. */
+    @media(min-width:1100px){
+      .topbar{height:112px}
+      .brand-logo{width:310px;height:83px}
+      .brand-logo img{width:354px;left:-22px;top:-25px}
+      .brand{gap:15px}
+      .brand-desc{font-size:9px;padding-left:11px}
+      .nav{gap:clamp(13px,1.5vw,24px)}
+    }
+    @media(min-width:741px) and (max-width:1099px){
+      .topbar{height:99px}
+      .brand-logo{width:267px;height:74px}
+      .brand-logo img{width:305px;left:-18px;top:-21px}
+    }
+    @media(max-width:740px){
+      .topbar{height:84px}
+      .brand-logo{width:232px;height:70px}
+      .brand-logo img{width:267px;left:-17px;top:-18px}
+      .nav{top:84px}
+    }
   </style>
 </head>
 <body>
