@@ -67,6 +67,29 @@
       .scope-band{padding:55px clamp(55px,6vw,100px)}
       .foot{padding:35px clamp(55px,6vw,100px)}
     }
+    /* Fluid RWD: size responds to the actual browser viewport, not monitor inches. */
+    .topbar,.content-section,.scope-band,.foot{padding-left:clamp(23px,5.2vw,100px);padding-right:clamp(23px,5.2vw,100px)}
+    .hero-content{padding-left:clamp(25px,6vw,100px)}
+    .hero h1{font-size:clamp(38px,4.1vw,60px)}
+    .content-section h2{font-size:clamp(29px,2.75vw,41px)}
+    .portal-grid,.cards{grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))}
+    .portal-grid a{min-width:0}
+    .intro-copy,.service,.contact-card{min-width:0;overflow-wrap:break-word}
+    .identity-art{height:auto;object-fit:contain}
+    @media(min-width:741px) and (max-width:1099px){
+      .hero{height:min(74vh,740px);min-height:520px}
+      .hero-content{width:min(720px,78%)}
+      .hero h1{font-size:clamp(42px,5vw,57px)}
+      .portal-grid,.cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .intro-grid{gap:6%}
+    }
+    @media(max-width:740px){
+      .hero h1{font-size:clamp(38px,9.5vw,61px)}
+      .portal-grid,.cards,.contact-grid{grid-template-columns:minmax(0,1fr)}
+      .content-section{padding-top:clamp(55px,9vw,70px);padding-bottom:clamp(55px,9vw,70px)}
+      .hero-content{padding-left:25px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
   </style>
 </head>
 <body>
