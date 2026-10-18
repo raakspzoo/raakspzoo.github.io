@@ -50,6 +50,14 @@
   .page-uslugi .service-list article{display:flex;flex-direction:column;padding:28px;background:#fbfaf7;border:1px solid #d8d3cb}
   .page-uslugi .service-list h2{font-size:25px;margin:0 0 16px}
 }
+/* Mobile header scales to fit narrow viewports and preserves a 44px menu button. */
+@media(max-width:740px){
+  .topbar{gap:8px;padding-inline:clamp(12px,4vw,23px);justify-content:space-between}
+  .brand{min-width:0;flex:0 1 auto}
+  .brand-logo{width:min(58vw,232px);height:auto;aspect-ratio:232 / 70;flex-shrink:1}
+  .brand-logo img{width:115%;max-width:none;left:-7%;top:-25%;height:auto}
+  .menu-toggle{margin-left:auto;min-width:44px;height:44px;flex-shrink:0}
+}
 </style></head>
 <body class="page-uslugi"><header class="topbar"><a class="brand" href="/" aria-label="RAAK — strona główna"><span class="brand-logo"><img src="/assets/logo-raak-szkic.webp" alt="Logo RAAK"></span><span class="brand-desc">INŻYNIERIA<br>TECHNOLOGIA<br>ROZWIĄZANIA</span></a><button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button><nav class="nav" aria-label="Nawigacja główna"><a href="/o-firmie.html"  class="">O firmie</a><a href="/uslugi.html" aria-current="page" class="">Usługi</a><a href="/realizacje.html"  class="">Realizacje</a><a href="/baza-wiedzy.html"  class="">Baza wiedzy</a><a href="/kontakt.html"  class="contact-link">Kontakt ↗</a></nav></header>
 <main><section class="page-hero"><div class="breadcrumb"><a href="/">Strona główna</a> / RAAK / Zakres działalności</div><h1>Specjalistyczne wsparcie techniczne.</h1><p>Cztery uzupełniające się obszary pracy: od rozpoznania problemu po wdrożenie rozwiązania.</p></section>

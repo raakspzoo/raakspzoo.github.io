@@ -143,6 +143,14 @@
     @media(min-width:741px){
       .topbar{position:relative;inset:auto;width:100%;padding-inline:clamp(23px,5.2vw,100px)}
     }
+    /* On phones, the logo scales to leave a reliable 44px menu target. */
+    @media(max-width:740px){
+      .topbar{gap:8px;padding-inline:clamp(12px,4vw,23px);justify-content:space-between}
+      .brand{min-width:0;flex:0 1 auto}
+      .brand-logo{width:min(58vw,232px);height:auto;aspect-ratio:232 / 70;flex-shrink:1}
+      .brand-logo img{width:115%;max-width:none;left:-7%;top:-25%;height:auto}
+      .menu-toggle{margin-left:auto;min-width:44px;height:44px;flex-shrink:0}
+    }
   </style>
 </head>
 <body>
