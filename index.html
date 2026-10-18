@@ -1,59 +1,85 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>RAAK | Inżynieria • Technologia • Rozwiązania</title>
-
-    <meta name="description"
-          content="RAAK sp. z o.o. Niezależne doradztwo inżynierskie i ekspertyzy techniczne w obszarze konstrukcji aluminiowych. 35 lat doświadczenia.">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            min-height: 100%;
-            background: #ffffff;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .plansza {
-            display: block;
-            width: 100%;
-            height: 100vh;
-            object-fit: contain;
-            object-position: center;
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RAAK — Inżynieria. Technologia. Rozwiązania.</title>
+  <meta name="description" content="RAAK — niezależne doradztwo, ekspertyzy i rozwiązania techniczne w konstrukcjach aluminiowych." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{--ink:#27313b;--muted:#69717a;--accent:#ae8b60;--paper:#f4f2ed;--line:#dedbd4;--navy:#164a80;--limestone:#eae6df;--silver:#bcc3c7}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);font-family:'DM Sans',sans-serif;color:var(--ink)}a{color:inherit;text-decoration:none}
+    .topbar{position:absolute;inset:0 0 auto;z-index:5;height:102px;display:flex;align-items:center;padding:0 clamp(24px,5vw,92px);gap:54px;background:linear-gradient(180deg,rgba(250,250,248,.96),rgba(250,250,248,.82));border-bottom:1px solid rgba(255,255,255,.6);backdrop-filter:blur(14px)}
+    .brand{display:flex;align-items:center;gap:16px;flex-shrink:0}.brand-logo{width:244px;height:66px;position:relative;overflow:hidden;display:block;background:#fff}.brand-logo img{position:absolute;width:278px;max-width:none;height:auto;left:-15px;top:-17px}.brand-desc{font-size:9px;line-height:1.5;letter-spacing:.15em;font-weight:700;color:#64716e;border-left:1px solid #aeb6b1;padding-left:14px}.nav{margin-left:auto;display:flex;gap:clamp(17px,2.2vw,38px);align-items:center;white-space:nowrap}.nav a{font-size:13px;font-weight:700;letter-spacing:.012em;transition:color .2s}.nav a:hover{color:#a57844}.contact-link{border:1px solid #87948d;padding:13px 20px!important;text-transform:uppercase;letter-spacing:.09em!important;font-size:11px!important}.menu-toggle{display:none;background:none;border:0;font-size:25px;color:var(--ink);cursor:pointer}
+    .hero{height:100svh;min-height:690px;max-height:1100px;position:relative;overflow:hidden;display:flex;align-items:center}.hero-bg{position:absolute;inset:0;background:url('assets/hero-raak.webp') center center /cover no-repeat;transform:scale(1.005)}.hero-bg:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(244,246,245,.96) 0%,rgba(244,246,245,.91) 22%,rgba(244,246,245,.7) 39%,rgba(244,246,245,.14) 64%,rgba(244,246,245,0) 100%)}
+    .hero-content{position:relative;z-index:1;padding:80px clamp(24px,8.5vw,155px) 20px;width:min(980px,78%)}.eyebrow{display:flex;align-items:center;gap:17px;color:#8e6b46;font-size:11px;text-transform:uppercase;letter-spacing:.24em;font-weight:800}.eyebrow:before{content:'';display:block;width:42px;height:2px;background:var(--accent)}h1{font-family:Manrope,sans-serif;font-size:clamp(42px,5vw,79px);letter-spacing:-.055em;line-height:1.14;margin:29px 0 22px;font-weight:700;max-width:760px}.hero p{max-width:600px;color:#4e605c;font-size:clamp(16px,1.3vw,19px);line-height:1.78;margin:0 0 42px}.actions{display:flex;gap:13px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;justify-content:center;gap:28px;padding:17px 25px;min-height:54px;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:.12em;border:1px solid #33443f;transition:.2s}.btn-primary{background:#283c37;color:#fff}.btn-primary:hover{background:#42574f}.btn-outline{background:rgba(255,255,255,.35)}.btn-outline:hover{background:#fff}.scroll-cue{position:absolute;bottom:38px;left:clamp(24px,8.5vw,155px);z-index:2;font-weight:700;font-size:10px;text-transform:uppercase;letter-spacing:.18em;display:flex;align-items:center;gap:14px;color:#4f615b}.scroll-cue:after{content:'';display:block;height:1px;width:62px;background:#6a7c73}.concept-note{position:absolute;right:clamp(22px,5vw,85px);bottom:38px;z-index:2;background:rgba(255,255,255,.84);padding:13px 17px;font-size:10px;line-height:1.5;color:#52605b;letter-spacing:.06em}
+    .content-section{padding:105px clamp(24px,8.5vw,155px)}.section-kicker{color:#9c794f;font-size:11px;font-weight:800;letter-spacing:.19em;text-transform:uppercase}.content-section h2{font:700 clamp(30px,3vw,48px)/1.18 Manrope,sans-serif;letter-spacing:-.04em;max-width:800px;margin:17px 0 28px}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:12%;align-items:end}.intro-grid p{color:#65716c;font-size:18px;line-height:1.8}.services{background:#e9ece7}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#cbd4cd;border:1px solid #cbd4cd;margin-top:44px}.service{background:#f7f8f4;padding:38px 28px;min-height:240px}.service .num{font-size:12px;color:var(--accent);font-weight:800}.service h3{font:700 20px/1.4 Manrope,sans-serif;margin:55px 0 0}.foot{padding:44px clamp(24px,8.5vw,155px);background:#243832;color:white;display:flex;justify-content:space-between;gap:25px;align-items:center}.foot p{font-size:13px;color:#becbc5;line-height:1.6}.foot a{border-bottom:1px solid #9caa9f;padding-bottom:4px}
+    .identity{background:#fff;text-align:center}.identity h2{margin-left:auto;margin-right:auto}.identity-art{width:100%;display:block;margin:35px auto 0;max-width:1250px}.identity-note{font-size:13px;color:#8b9894;letter-spacing:.06em}
+    .intro-expanded{background:#fff}.intro-grid{align-items:start}.intro-copy{display:grid;gap:22px}.intro-copy p{margin:0}.experience-line{border-top:1px solid var(--line);padding-top:23px;margin-top:38px;display:flex;gap:28px;align-items:center}.experience-number{font:700 57px/1 Manrope,sans-serif;letter-spacing:-.07em;color:#174e78;white-space:nowrap}.experience-desc{font-size:13px;line-height:1.6;color:#6a7772;max-width:240px}.specialties{display:flex;flex-wrap:wrap;gap:9px;margin-top:8px}.specialties span{border:1px solid #d6ddd8;color:#54665f;padding:9px 13px;font-size:11px;letter-spacing:.055em}
+    .services-header{max-width:740px}.services-header p{font-size:17px;color:#60716a;line-height:1.75;margin:0}.service{display:flex;flex-direction:column;min-height:355px}.service h3{margin:36px 0 16px}.service p{color:#66736f;font-size:13px;line-height:1.75;margin:0}.service:hover{background:#fff}.service .service-line{height:2px;width:34px;background:#b58752;margin-top:auto}
+    .approach{background:#f4f5f1}.approach-grid{display:grid;grid-template-columns:43% 1fr;gap:9%;align-items:start}.approach-lead{position:sticky;top:40px}.approach-lead p{font-size:17px;line-height:1.8;color:#60716a;max-width:470px}.steps{border-top:1px solid #cdd5cf}.step{display:grid;grid-template-columns:52px 1fr;gap:20px;padding:25px 0;border-bottom:1px solid #cdd5cf}.step-no{color:#a1835f;font-weight:800;font-size:13px}.step h3{font:700 18px/1.4 Manrope,sans-serif;margin:0 0 9px}.step p{color:#6a7771;font-size:14px;line-height:1.7;margin:0}
+    .scope-band{background:#244238;color:#fff;display:grid;grid-template-columns:1fr 1fr;gap:12%;padding:65px clamp(24px,8.5vw,155px)}.scope-band .section-kicker{color:#c6a780}.scope-band h2{font:600 clamp(28px,2.6vw,42px)/1.25 Manrope,sans-serif;letter-spacing:-.04em;margin:12px 0 0}.scope-band p{color:#d0ded5;line-height:1.85;margin:0;align-self:center;font-size:16px}
+    .contact-section{background:#edf0ec}.contact-heading{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:end}.contact-heading p{font-size:17px;line-height:1.8;color:#61716b}.contact-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px}.contact-card{background:#fff;border:1px solid #dce2dc;min-height:205px;padding:31px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:20px}.contact-card .contact-label{font-size:11px;font-weight:800;color:#ad8353;letter-spacing:.18em;text-transform:uppercase}.contact-card strong,.contact-card a{font:600 clamp(18px,1.7vw,27px)/1.45 Manrope,sans-serif;color:#263a35;overflow-wrap:anywhere}.contact-card a:hover{color:#135686}.contact-card small{font-size:13px;color:#788780}.contact-card .contact-value{display:grid;gap:7px}.contact-card address{font-style:normal;line-height:1.65;font-size:20px;font-weight:600}.footer-links{display:flex;gap:22px;flex-wrap:wrap;align-items:center}.footer-links a{border-bottom:1px solid #91a59a;padding-bottom:4px;font-size:13px}
+    @media(max-width:1050px){.topbar{height:82px}.nav{gap:16px}.nav a{font-size:11px}.brand-logo{width:207px;height:60px}.brand-logo img{width:240px;left:-14px;top:-15px}.brand-desc{display:none}.hero-content{width:84%}.hero-bg{background-position:57% center}.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:740px){.topbar{height:76px;padding:0 23px}.menu-toggle{display:block;margin-left:auto}.nav{position:absolute;display:none;top:76px;left:0;right:0;padding:22px;background:#f4f5f1;flex-direction:column;align-items:stretch;gap:22px;border-bottom:1px solid var(--line)}.nav.open{display:flex}.hero{min-height:760px;height:100svh}.hero-bg{background-position:61% center}.hero-bg:after{background:linear-gradient(90deg,rgba(246,247,244,.97),rgba(246,247,244,.8) 66%,rgba(246,247,244,.45))}.hero-content{padding:90px 25px 55px;width:100%}.eyebrow{font-size:9px;letter-spacing:.16em}h1{font-size:clamp(39px,10vw,62px);margin:24px 0}.hero p{font-size:16px;line-height:1.65;max-width:490px}.actions{gap:10px}.btn{padding:15px 16px;font-size:10px;gap:10px}.scroll-cue{bottom:24px;left:25px}.concept-note{display:none}.intro-grid{grid-template-columns:1fr;gap:0}.content-section{padding:70px 25px}.cards{grid-template-columns:1fr}.service{min-height:165px}.service h3{margin-top:28px}.foot{padding:35px 25px;display:block}}
+    @media(max-width:740px){.experience-line{margin-top:22px}.experience-number{font-size:48px}.service{min-height:235px}.service h3{margin:22px 0 10px}.approach-grid,.scope-band{grid-template-columns:1fr;gap:25px}.approach-lead{position:static}.scope-band{padding:60px 25px}.identity-art{margin-top:15px}}
+    @media(max-width:740px){.contact-heading,.contact-grid{grid-template-columns:1fr}.contact-card{min-height:170px;padding:26px}.contact-grid{margin-top:22px}.footer-links{margin-top:22px}}
+    /* RaaK / paleta architektoniczna: ciepły kamień, kredowa biel, grafit, RAL 5010, szampański metal. */
+    body{background:var(--paper);color:var(--ink)}
+    .topbar{background:linear-gradient(180deg,rgba(251,250,247,.97),rgba(251,250,247,.88));border-color:rgba(214,211,204,.65)}
+    .brand-desc{color:#6c7379;border-color:#bbc1c5}.nav a:hover{color:var(--navy)}.contact-link{border-color:#7c8b95}
+    .hero-bg:after{background:linear-gradient(90deg,rgba(248,247,244,.97) 0%,rgba(248,247,244,.91) 23%,rgba(248,247,244,.68) 43%,rgba(248,247,244,.16) 66%,transparent 100%)}
+    .eyebrow,.section-kicker{color:#805f3e}.eyebrow:before{background:var(--accent)}.hero p{color:#53606c}
+    .btn-primary{background:var(--navy);border-color:var(--navy);color:#fff}.btn-primary:hover{background:#0f3c69}
+    .btn-outline{border-color:#677580;color:#243648;background:rgba(255,255,255,.4)}.btn-outline:hover{background:#fff}
+    .scroll-cue{color:#64717b}.scroll-cue:after{background:#7c8990}
+    .intro-expanded,.identity{background:#fbfaf7}.intro-copy p,.intro-grid p,.services-header p,.approach-lead p,.contact-heading p{color:#626c75}
+    .experience-number{color:var(--navy)}.experience-desc,.specialties span{color:#66717a}.specialties span{border-color:#d5d6d3}
+    .services{background:var(--limestone)}.cards{background:#d6d3cb;border-color:#d6d3cb}.service{background:#f8f7f4}.service:hover{background:#fff}.service .num,.step-no{color:#a77e52}.service p,.step p{color:#667078}.service .service-line{background:var(--accent)}
+    .approach{background:#f2f0eb}.steps,.step{border-color:#d7d5ce}
+    .scope-band{background:#263642}.scope-band .section-kicker{color:#d9b78f}.scope-band p{color:#d4d9dc}
+    .contact-section{background:#ece9e2}.contact-card{border-color:#dcd9d2;background:#fbfaf7}.contact-card .contact-label{color:#805f3e}.contact-card strong,.contact-card a{color:#263745}.contact-card a:hover{color:var(--navy)}.contact-card small{color:#727d86}
+    .foot{background:#232d37}.foot p{color:#c7cdd2}.footer-links a{border-color:#8c9aa6}
+    .identity-note{color:#77828a}
+    @media(max-width:740px){.hero-bg:after{background:linear-gradient(90deg,rgba(249,248,245,.98),rgba(249,248,245,.86) 67%,rgba(249,248,245,.52))}}
+  </style>
 </head>
-
 <body>
-
-    <img
-        class="plansza"
-        src="RAAK_ Inżynieria i nowoczesna architektura.png"
-        alt="RAAK - Inżynieria, Technologia, Rozwiązania"
-        onerror="if (!this.dataset.retry) {
-            this.dataset.retry = '1';
-            this.src = 'RAAK_Inżynieria i nowoczesna architektura.png';
-        }"
-    >
-
+  <header class="topbar">
+    <a class="brand" href="#start" aria-label="RaaK — strona główna"><span class="brand-logo"><img src="assets/logo-raak-szkic.webp" alt="RaaK — znak kreślony w granacie z liniami konstrukcyjnymi" /></span><span class="brand-desc">INŻYNIERIA<br>TECHNOLOGIA<br>ROZWIĄZANIA</span></a>
+    <button class="menu-toggle" aria-label="Otwórz menu" aria-expanded="false">☰</button>
+    <nav class="nav" aria-label="Nawigacja główna"><a href="#o-nas">O firmie</a><a href="#kompetencje">Obszary działania</a><a href="#metoda">Sposób pracy</a><a href="#znak">Znak RaaK</a><a class="contact-link" href="#kontakt">Kontakt ↗</a></nav>
+  </header>
+  <main>
+    <section class="hero" id="start" aria-label="RAAK — niezależne doradztwo techniczne"><div class="hero-bg"></div><div class="hero-content">
+      <div class="eyebrow">Niezależne doradztwo techniczne</div>
+      <h1>Inżynieria, która prowadzi do rozwiązań.</h1>
+      <p>Ekspertyzy, rozwój technologii i specjalistyczne wsparcie w zakresie konstrukcji aluminiowych. Łączymy wieloletnie doświadczenie z analitycznym podejściem do najbardziej wymagających wyzwań technicznych.</p>
+      <div class="actions"><a class="btn btn-primary" href="#kompetencje">Poznaj nasze kompetencje <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#kontakt">Porozmawiajmy <span aria-hidden="true">→</span></a></div>
+    </div><a href="#o-nas" class="scroll-cue">Odkryj RAAK</a></section>
+    <section class="content-section intro-grid intro-expanded" id="o-nas">
+      <div><div class="section-kicker">O firmie RaaK</div><h2>Doświadczenie. Precyzja. Niezależne spojrzenie.</h2><div class="experience-line"><span class="experience-number">35+</span><span class="experience-desc">lat praktycznego doświadczenia w branży konstrukcji i stolarki</span></div></div>
+      <div class="intro-copy"><p>RaaK to niezależne doradztwo inżynierskie dla producentów stolarki aluminiowej, dostawców systemów oraz firm poszukujących rzetelnej oceny problemów konstrukcyjnych i technologicznych.</p><p>Pracujemy na styku projektowania, technologii produkcji, montażu i eksploatacji. Łączymy wiedzę z zakresu mechaniki, metrologii i automatyki z wieloletnią praktyką w analizie konstrukcji aluminiowych.</p><p>Naszym celem jest ustalenie przyczyn problemu, wskazanie możliwości technicznych i wypracowanie rozwiązania możliwego do wdrożenia.</p><div class="specialties" aria-label="Specjalizacje"><span>Konstrukcje aluminiowe</span><span>Systemy przesuwne HS</span><span>Fasady i okna</span><span>Analiza techniczna</span><span>Rozwój technologii</span></div></div>
+    </section>
+    <section class="content-section services" id="kompetencje"><div class="services-header"><div class="section-kicker">Zakres usług</div><h2>Kompetencje w czterech obszarach.</h2><p>Od oceny przyczyn usterki, przez dobór rozwiązania, po wsparcie przy jego wdrożeniu. Zakres współpracy dobieramy do konkretnego zagadnienia.</p></div><div class="cards">
+      <article class="service" id="ekspertyzy"><span class="num">01 / EKSPERTYZY</span><h3>Ekspertyzy i opinie techniczne</h3><p>Analizy konstrukcji i zgłaszanych nieprawidłowości, ocena dokumentacji, pomiary, ustalanie możliwych przyczyn oraz formułowanie wniosków technicznych.</p><span class="service-line" aria-hidden="true"></span></article>
+      <article class="service"><span class="num">02 / ROZWÓJ</span><h3>Projektowanie i rozwój</h3><p>Wsparcie przy opracowywaniu i modyfikowaniu rozwiązań, analizie połączeń, detali konstrukcyjnych oraz przygotowaniu zaleceń dla zespołów technicznych.</p><span class="service-line" aria-hidden="true"></span></article>
+      <article class="service"><span class="num">03 / TECHNOLOGIE</span><h3>Technologie i optymalizacja</h3><p>Analiza procesów wytwarzania i montażu, dobór metod postępowania, usprawnienia technologiczne oraz wsparcie w przygotowaniu instrukcji produkcyjnych.</p><span class="service-line" aria-hidden="true"></span></article>
+      <article class="service"><span class="num">04 / DIAGNOSTYKA</span><h3>Diagnostyka i rozwiązywanie problemów</h3><p>Oględziny i pomiary, analiza przecieków, odkształceń, problemów funkcjonalnych i reklamacji oraz opracowywanie możliwych działań naprawczych.</p><span class="service-line" aria-hidden="true"></span></article>
+    </div></section>
+    <section class="content-section approach" id="metoda"><div class="approach-grid"><div class="approach-lead"><div class="section-kicker">Sposób pracy</div><h2>Najpierw zrozumieć. Potem rozwiązać.</h2><p>Skuteczne doradztwo wymaga spojrzenia na cały układ: projekt, materiały, technologię, warunki montażu i rzeczywistą eksploatację.</p></div><div class="steps"><div class="step"><span class="step-no">01</span><div><h3>Rozpoznanie zagadnienia</h3><p>Określenie problemu, zebranie dokumentacji, historii zdarzeń i danych technicznych.</p></div></div><div class="step"><span class="step-no">02</span><div><h3>Analiza i weryfikacja</h3><p>Ocena konstrukcji, pomiary, oględziny oraz rozpatrzenie możliwych mechanizmów powstawania nieprawidłowości.</p></div></div><div class="step"><span class="step-no">03</span><div><h3>Wnioski i rekomendacje</h3><p>Przedstawienie ustaleń i wariantów postępowania z uwzględnieniem wykonalności technicznej.</p></div></div><div class="step"><span class="step-no">04</span><div><h3>Wsparcie wdrożenia</h3><p>W zależności od zakresu zlecenia — konsultacje z projektantami, produkcją, montażem lub zespołem reklamacji.</p></div></div></div></div></section>
+    <section class="scope-band"><div><div class="section-kicker">Dla kogo pracujemy</div><h2>Partner techniczny, kiedy zagadnienie wymaga doświadczenia.</h2></div><p>Wspieramy producentów stolarki, systemodawców, działy R&amp;D, jakości i reklamacji oraz przedsiębiorstwa realizujące zaawansowane konstrukcje aluminiowe.</p></section>
+    <section class="content-section identity" id="znak"><div class="section-kicker">Tożsamość RaaK</div><h2>Od kreski inżyniera do rozwiązania.</h2><p>Geometryczny znak RaaK wyrasta z tradycji ręcznego projektowania — granatowy kontur i subtelne srebrne osie przypominają, że za każdym rozwiązaniem stoi precyzyjne myślenie.</p><img class="identity-art" src="assets/logo-raak-szkic.webp" alt="Pełny szkic konstrukcyjny logotypu RaaK"/></section>
+    <section class="content-section contact-section" id="kontakt"><div class="contact-heading"><div><div class="section-kicker">Kontakt</div><h2>Porozmawiajmy o Twoim zagadnieniu technicznym.</h2></div><p>Przedstaw problem lub zakres planowanej współpracy. Skontaktuj się telefonicznie albo prześlij dokumentację i krótki opis sprawy na jeden z podanych adresów.</p></div><div class="contact-grid">
+      <div class="contact-card"><span class="contact-label">Telefon</span><div class="contact-value"><a href="tel:+48884054808">+48 884 054 808</a><small>Bezpośredni kontakt</small></div></div>
+      <div class="contact-card"><span class="contact-label">E-mail</span><div class="contact-value"><a href="mailto:a.krawiec@raak.pl">a.krawiec@raak.pl</a><a href="mailto:raakspzoo@gmail.com">raakspzoo@gmail.com</a></div></div>
+      <div class="contact-card"><span class="contact-label">Dane firmy</span><div class="contact-value"><strong>RAAK sp. z o.o.</strong><address>ul. Zawierciańska 27<br>42-200 Częstochowa</address></div></div>
+      <div class="contact-card"><span class="contact-label">W internecie</span><div class="contact-value"><a href="https://raak.pl/" target="_blank" rel="noopener noreferrer">raak.pl ↗</a><small>Oficjalna domena firmy</small></div></div>
+    </div></section>
+  </main>
+  <footer class="foot"><div><strong>RAAK sp. z o.o.</strong><p>INŻYNIERIA • TECHNOLOGIA • ROZWIĄZANIA<br>ul. Zawierciańska 27, 42-200 Częstochowa</p></div><div class="footer-links"><a href="tel:+48884054808">+48 884 054 808</a><a href="mailto:a.krawiec@raak.pl">a.krawiec@raak.pl</a><a href="#start">Do góry ↑</a></div></footer>
+  <script>const toggle=document.querySelector('.menu-toggle');const nav=document.querySelector('.nav');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));toggle.textContent=open?'×':'☰'});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='☰'}));</script>
 </body>
-
 </html>
